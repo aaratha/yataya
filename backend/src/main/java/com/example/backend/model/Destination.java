@@ -49,4 +49,20 @@ public class Destination {
   public void setLongitude(double longitude) {
     this.longitude = longitude;
   }
+
+  public double getDistanceScore() {
+    return distanceScore;
+  }
+
+  public void setDistanceScore(double distanceScore) {
+    this.distanceScore = distanceScore;
+  }
+
+  public double getTotalCost() {
+    return totalCost;
+  }
+
+  public void setTotalCost(double totalCost) {
+    this.totalCost = totalCost;
+  }
 }
