@@ -85,7 +85,7 @@ function Travelers({ travelers, setTravelers, destinations, setDestinations }) {
     };
 
     return (
-        <div className="app-shell">
+        <div className="travelers-shell">
 
             <h2>Add Travelers</h2>
             <form onSubmit={addTraveler}>
