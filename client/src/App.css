@@ -1,0 +1,114 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.city-options {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 320px;
+}
+
+.city-options li + li {
+  border-top: 1px solid #eee;
+}
+
+.city-options button {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.city-options button:hover,
+.city-options button:focus {
+  background: #f5f5f5;
+}
+
+.inline-error {
+  margin-top: 0.5rem;
+  color: #b00020;
+  font-size: 0.9rem;
+}
+
+.selection-note {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+
+.options button {
+    font-size: 1em;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 0.8em 1em 0.8em 1em;
+    width: 10em;
+    background: none;
+    background: rgba(255, 255, 255, 0.0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all;
+    box-shadow:0 0 40px -10px rgba(0,0,0,1), 
+      0 0 25px -15px rgba(0,0,0,1);
+}
+
+.options button:hover{
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.options button.left {
+    border-radius: 30px 0px 0px 30px;
+}
+
+.options button.middle {
+    border-radius: 0px;
+    border-right: 0px !important;
+    border-left: 0px !important;
+}
+
+.options button.right {
+    border-radius: 0px 30px 30px 0px;
+}
+
+
+.options button.selected {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.options button.submit {
+    padding: 0.8em ;
+    width: 6em;
+    margin-left: 0.5em;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 500px;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: auto;
+    box-shadow:0 0 40px -10px rgba(0,0,0,1), 
+      0 0 25px -15px rgba(0,0,0,1);
+}
