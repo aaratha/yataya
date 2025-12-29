@@ -1,4 +1,5 @@
 import { Navigate, NavLink, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import Travelers from "./pages/Travelers.jsx";
 import Destinations from "./pages/Destinations.jsx";
 import Dates from "./pages/Dates.jsx";
@@ -6,6 +7,9 @@ import Dates from "./pages/Dates.jsx";
 import "./App.css";
 
 function App() {
+    const [travelers, setTravelers] = useState([]);
+    const [destinations, setDestinations] = useState([]);
+
     return (
         <div>
             <h1>Yataya</h1>
@@ -38,7 +42,11 @@ function App() {
                 </div>
                 <div className="panel">
                     <Routes>
-                        <Route path="/travelers" element={<Travelers />} />
+                        <Route path="/travelers" element={<Travelers
+                            travelers={travelers}
+                            setTravelers={setTravelers}
+                            destinations={destinations}
+                            setDestinations={setDestinations} />} />
                         <Route path="/destinations" element={<Destinations />} />
                         <Route path="/dates" element={<Dates />} />
                         <Route path="*" element={<Navigate to="/travelers" />} />

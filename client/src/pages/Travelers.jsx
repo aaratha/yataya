@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Travelers() {
-    const [destinations, setDestinations] = useState([]);
-    const [travelers, setTravelers] = useState([]);
+function Travelers({ travelers, setTravelers, destinations, setDestinations }) {
     const [name, setName] = useState("");
     const [cityQuery, setCityQuery] = useState("");
     const [cityOptions, setCityOptions] = useState([]);
