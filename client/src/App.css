@@ -67,7 +67,6 @@
     flex: 1;
     min-width: 0;
     padding-left: 1.2em;
-    padding-right: 0.5em;
     align-items: center;
     border-radius: 30px;
     background: rgba(var(--color-panel-bg), var(--alpha-panel-bg));
@@ -118,6 +117,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .heading button:hover {
@@ -130,6 +130,7 @@
 
 .heading-buttons a.heading-end {
     border-radius: 0px 30px 30px 0;
+    padding-right: 0.5em;
 }
 
 .heading-buttons a.selected {
