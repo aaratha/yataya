@@ -1,4 +1,18 @@
 :root {
+  --color-primary: 128, 159, 255;
+  --color-bg-top: 255, 255, 255;
+  --color-bg-bottom: 245, 245, 248;
+  --color-panel-bg: 255, 255, 255;
+  --color-panel-hover: 0, 0, 0;
+  --color-border: 0, 0, 0;
+  --color-text: 0, 0, 0;
+  --color-button-bg: 0, 0, 0;
+  --color-button-hover-bg: 50, 50, 50;
+  --alpha-panel-bg: 1.0;
+  --alpha-panel-border: 1.0;
+  --alpha-panel-hover-bg: 0.05;
+  --alpha-panel-shadow: 0.2;
+
   font-family:
     "Segoe UI",
     system-ui,
@@ -6,15 +20,30 @@
     sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color: #f4f6ff;
+  color: rgb(var(--color-text));
   /* background-color: #171717; */
-  background: linear-gradient(to bottom, #121212,#141414);
+  background: linear-gradient(to bottom, rgb(var(--color-bg-top)), rgb(var(--color-bg-bottom)));
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  --color-primary: #646cff;
+:root.dark {
+  --color-bg-top: 18, 18, 18;
+  --color-bg-bottom: 20, 20, 20;
+  --color-text: 255, 255, 255;
+  --color-panel-bg: 255, 255, 255;
+  --color-panel-hover: 255, 255, 255;
+  --color-border: 255, 255, 255;
+  --color-button-bg: 255, 255, 255;
+  --color-button-hover-bg: 209, 209, 209;
+  --alpha-panel-bg: 0.02;
+  --alpha-panel-border: 0.3;
+  --alpha-panel-hover-bg: 0.05;
+  --alpha-panel-shadow: 1.0;
+  color: rgb(var(--color-text));
+  background: linear-gradient(to bottom, rgb(var(--color-bg-top)), rgb(var(--color-bg-bottom)));
 }
 
 html, body {
