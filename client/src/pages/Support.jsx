@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HeadingBar from "../components/HeadingBar.jsx";
 
-function Contact() {
+function Support() {
     const [msg, setMsg] = useState("");
 
     useEffect(() => {
@@ -21,13 +21,13 @@ function Contact() {
 
                 <div className="card">
                     <p>
-                        Edit <code>src/pages/Contact.jsx</code> to keep iterating.
+                        Edit <code>src/pages/Support.jsx</code> to keep iterating.
                     </p>
                 </div>
 
                 <div className="card">
                     <p>
-                        Edit <code>src/pages/Contact.jsx</code> to keep iterating.
+                        Edit <code>src/pages/Support.jsx</code> to keep iterating.
                     </p>
                 </div>
 
@@ -36,4 +36,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default Support;

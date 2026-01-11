@@ -5,7 +5,7 @@ function NotFound() {
   return (
     <div className="app-shell">
       <HeadingBar />
-      <section className="panel">
+      <section className="card">
         <h2>Page not found</h2>
         <p className="muted">
           That route does not exist yet. Head back home to continue exploring.

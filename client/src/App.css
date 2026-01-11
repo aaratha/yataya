@@ -57,7 +57,7 @@
 .heading {
     display: flex;
     flex-direction: row;
-    height: 7vh;
+    height: 3.6em;
     gap: 1.0em;
 }
 
@@ -87,7 +87,31 @@
     height: 100%;
 }
 
-.heading-buttons a {
+.heading-buttons button.menu {
+    display: none;
+    width: 3.5em !important; 
+    align-items: center;
+    padding-right: 0.8em;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.heading-buttons button.menu .menu-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .heading-buttons a {
+        display: none;
+    }
+    .heading-buttons button.menu {
+        display: flex;
+    }
+}
+
+.heading-buttons a, button {
     background: none;
     border: none;
     color: rgb(var(--text));
@@ -98,7 +122,7 @@
     border-left: var(--border-thickness) solid rgb(var(--bg));
     align-content: center;
     text-align: center;
-    width: clamp(3.8em, 10vw, 5.3em);
+    width: 5.2em;
     cursor: pointer;
 }
 
@@ -117,15 +141,15 @@
     cursor: pointer;
 }
 
-.heading button:hover {
+.heading button.dark-mode-toggle:hover {
     background: rgb(var(--inv-hover-bg));
 }
 
-.heading-buttons a:hover {
+.heading-buttons a:hover, button:hover {
     background: rgb(var(--hover-bg));
 }
 
-.heading-buttons a.heading-end {
+.heading-buttons a.heading-end, button.heading-end {
     border-radius: 0px 30px 30px 0;
     padding-right: 0.5em;
 }
@@ -151,7 +175,7 @@
     display: flex;
     flex-direction: row;
     gap: 1.0em;
-    height: 7vh;             /* fixed height for heading and options */
+    height: 3.6em;             /* fixed height for heading and options */
 }
 
 .options-main {
@@ -169,6 +193,7 @@
     color: rgb(var(--text));
     width: 100%;
     font-size: 1.2em;
+    font-weight: 500;
     background: rgb(var(--card-bg));
     border: none;
     cursor: pointer;
