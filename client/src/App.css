@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: row;
     height: 7vh;
-    gap: 0.8em;
+    gap: 1.0em;
 }
 
 .heading-main {
@@ -69,12 +69,9 @@
     padding-left: 1.2em;
     align-items: center;
     border-radius: 30px;
-    background: rgba(var(--color-panel-bg), var(--alpha-panel-bg));
-    border: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
+    background: rgb(var(--card-bg));
     justify-content: space-between;  /* vertical centering */
     align-items: center;
-    box-shadow:0 0 40px -10px rgba(0,0,0,var(--alpha-panel-shadow)), 
-      0 0 25px -15px rgba(0,0,0,var(--alpha-panel-shadow));
     gap: 0.5em;
     overflow: hidden;
 }
@@ -93,12 +90,12 @@
 .heading-buttons a {
     background: none;
     border: none;
-    color: rgb(var(--color-text));
+    color: rgb(var(--text));
     height: 100%;
     font-size: 1.2em;
     text-decoration: none;
     font-weight: 500;
-    border-left: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
+    border-left: var(--border-thickness) solid rgb(var(--bg));
     align-content: center;
     text-align: center;
     width: clamp(3.8em, 10vw, 5.3em);
@@ -111,9 +108,9 @@
     height: 100%;          /* fill parent height */
     width: auto; 
     aspect-ratio: 1 / 1;   /* keeps width and height equal */
-    border: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
-    background: rgb(var(--color-button-bg));
-    color: rgb(var(--color-bg-top)) !important;
+    border: none;
+    background: rgb(var(--text));
+    color: rgb(var(--card-bg)) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,11 +118,11 @@
 }
 
 .heading button:hover {
-    background: rgb(var(--color-button-hover-bg));
+    background: rgb(var(--inv-hover-bg));
 }
 
 .heading-buttons a:hover {
-    background: rgba(var(--color-panel-hover), var(--alpha-panel-hover-bg));
+    background: rgb(var(--hover-bg));
 }
 
 .heading-buttons a.heading-end {
@@ -134,8 +131,8 @@
 }
 
 .heading-buttons a.selected {
-    background: rgba(var(--color-panel-hover), 1.0);
-    color: rgb(var(--color-bg-top)) !important;
+    background: rgb(var(--text));
+    color: rgb(var(--card-bg)) !important;
 }
 
 .heading button.dark-mode-toggle .moon-icon,
@@ -153,6 +150,7 @@
 .options {
     display: flex;
     flex-direction: row;
+    gap: 1.0em;
     height: 7vh;             /* fixed height for heading and options */
 }
 
@@ -162,30 +160,26 @@
     flex: 1;
     min-width: 0;
     border-radius: 30px;
-    background: rgba(var(--color-panel-bg), var(--alpha-panel-bg));
-    border: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
-    box-shadow:0 0 40px -10px rgba(0,0,0,var(--alpha-panel-shadow)), 
-      0 0 25px -15px rgba(0,0,0,var(--alpha-panel-shadow));
+    background: rgb(var(--card-bg));
     overflow: hidden;
 }
 
 .options button {
     font-size: 1em;
-    color: rgb(var(--color-text));
+    color: rgb(var(--text));
     width: 100%;
     font-size: 1.2em;
-    background: rgba(var(--color-panel-bg), 0.0);
+    background: rgb(var(--card-bg));
     border: none;
-    transition: all;
     cursor: pointer;
 }
 
 .options-main button + button {
-    border-left: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
+    border-left: var(--border-thickness) solid rgb(var(--bg));
 }
 
 .options button:hover{
-    background: rgba(var(--color-panel-hover), var(--alpha-panel-hover-bg));
+    background: rgb(var(--hover-bg));
 }
 
 .options button.left {
@@ -200,26 +194,21 @@
     border-radius: 0px 30px 30px 0px;
 }
 
-
-.options button.selected {
-    background: rgba(var(--color-panel-hover), 1.0);
-    color: rgb(var(--color-bg-top)) !important;
-}
-
 .options button.submit {
     padding: 0;
-    margin-left: 0.8em;
     border-radius: 50%;     /* circle */
+    border: none;
     height: 100%;          /* fill parent height */
     width: auto; 
     aspect-ratio: 1 / 1;   /* keeps width and height equal */
-    border: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
-    background: rgb(var(--color-button-bg));
-    color: rgb(var(--color-bg-top)) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.options button.submit:hover {
+    background: rgb(var(--hover-bg));
 }
 
 .options button.submit .arrow-icon {
@@ -229,21 +218,34 @@
 }
 
 
-.options button.submit:hover {
-    background: rgb(var(--color-button-hover-bg));
+.options button.selected {
+    background: rgb(var(--text));
+    color: rgb(var(--card-bg)) !important;
 }
+
 
 .panel {
     display: flex;
     flex-direction: column;
+    gap: 1em;
     width: 100%;
     flex-grow: 1;      /* panel grows to fill remaining height */
-    background: rgba(var(--color-panel-bg), var(--alpha-panel-bg));
+    background: rgb(var(--bg));
     border-radius: 20px;
-    border: 1px solid rgba(var(--color-border), var(--alpha-panel-border));
-    box-shadow:0 0 40px -10px rgba(0,0,0,var(--alpha-panel-shadow)), 
-      0 0 25px -15px rgba(0,0,0,var(--alpha-panel-shadow));
+    overflow: scroll;
+    padding: none;
+    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;      /* panel grows to fill remaining height */
+    background: rgb(var(--card-bg));
+    border-radius: 20px;
     overflow: hidden;
+    min-height: 400px;    /* allows flex children to shrink properly */
 }
 
 .travelers-shell {

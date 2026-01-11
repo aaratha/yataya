@@ -50,7 +50,7 @@ function Plan() {
                     </svg>
                 </button>
             </div>
-            <div className="panel">
+            <div className="card">
                 {activeTab === "destinations" && <Destinations />}
                 {activeTab === "travelers" && (
                     <Travelers

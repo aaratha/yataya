@@ -2,29 +2,52 @@ import { useEffect, useState } from "react";
 import HeadingBar from "../components/HeadingBar.jsx";
 
 function Home() {
-  const [msg, setMsg] = useState("");
+    const [msg, setMsg] = useState("");
 
-  useEffect(() => {
-    fetch("/api/hello")
-      .then((res) => res.json())
-      .then((data) => setMsg(data.message));
-  }, []);
+    useEffect(() => {
+        fetch("/api/hello")
+            .then((res) => res.json())
+            .then((data) => setMsg(data.message));
+    }, []);
 
-  return (
-    <div className="app-shell">
-      <HeadingBar />
-      <section className="panel">
-        <h1>Yataya</h1>
-        <p className="muted">{msg}</p>
+    return (
+        <div className="app-shell">
+            <HeadingBar />
+            <section className="panel">
 
-        <div className="card">
-          <p>
-            Edit <code>src/pages/Home.jsx</code> to keep iterating.
-          </p>
+                <div className="card">
+                    <h1>Yataya</h1>
+                    <p className="muted">{msg}</p>
+                </div>
+
+                <div className="card">
+                    <p>
+                        Edit <code>src/pages/Home.jsx</code> to keep iterating.
+                    </p>
+                </div>
+
+                <div className="card">
+                    <p>
+                        Edit <code>src/pages/Home.jsx</code> to keep iterating.
+                    </p>
+                </div>
+
+                <div className="card">
+                    <p>
+                        Edit <code>src/pages/Home.jsx</code> to keep iterating.
+                    </p>
+                </div>
+
+                <div className="card">
+                    <p>
+                        Edit <code>src/pages/Home.jsx</code> to keep iterating.
+                    </p>
+                </div>
+
+
+            </section>
         </div>
-      </section>
-    </div>
-  );
+    );
 }
 
 export default Home;
