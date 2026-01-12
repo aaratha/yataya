@@ -54,26 +54,50 @@
     gap: 1em;
 }
 
-.heading {
+.bar {
     display: flex;
     flex-direction: row;
-    height: 3.6em;
     gap: 1.0em;
+    height: 3.6em;
 }
 
-.heading-main {
+.bar-main {
     display: flex;
     flex-direction: row;
     flex: 1;
     min-width: 0;
-    padding-left: 1.2em;
-    align-items: center;
     border-radius: 30px;
     background: rgb(var(--card-bg));
+    overflow: hidden;
+}
+
+.surface {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: rgb(var(--card-bg));
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.icon-button {
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.heading-main {
+    padding-left: 1.2em;
     justify-content: space-between;  /* vertical centering */
     align-items: center;
     gap: 0.5em;
-    overflow: hidden;
 }
 
 .heading-main h1 {
@@ -91,7 +115,7 @@
     display: none;
     width: 3.5em !important; 
     align-items: center;
-    padding-right: 0.8em;
+    padding-right: 0.6em;
     justify-content: center;
     cursor: pointer;
 }
@@ -103,7 +127,7 @@
 }
 
 @media (max-width: 700px) {
-    .heading-buttons a {
+    .heading-buttons .nav-button {
         display: none;
     }
     .heading-buttons button.menu {
@@ -111,7 +135,7 @@
     }
 }
 
-.heading-buttons a, button {
+.heading-buttons .nav-button {
     background: none;
     border: none;
     color: rgb(var(--text));
@@ -127,35 +151,25 @@
 }
 
 .heading button.dark-mode-toggle {
-    padding: 0;
-    border-radius: 50%;     /* circle */
-    height: 100%;          /* fill parent height */
-    width: auto; 
-    aspect-ratio: 1 / 1;   /* keeps width and height equal */
-    border: none;
-    background: rgb(var(--text));
+    background: rgb(var(--inv-bg));
     color: rgb(var(--card-bg)) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 }
 
 .heading button.dark-mode-toggle:hover {
     background: rgb(var(--inv-hover-bg));
 }
 
-.heading-buttons a:hover, button:hover {
+.heading-buttons .nav-button:hover {
     background: rgb(var(--hover-bg));
 }
 
-.heading-buttons a.heading-end, button.heading-end {
+.heading-buttons .nav-button.heading-end {
     border-radius: 0px 30px 30px 0;
     padding-right: 0.5em;
 }
 
-.heading-buttons a.selected {
-    background: rgb(var(--text));
+.heading-buttons .nav-button.selected {
+    background: rgb(var(--inv-bg));
     color: rgb(var(--card-bg)) !important;
 }
 
@@ -171,25 +185,7 @@
     transform-origin: center;
 }
 
-.options {
-    display: flex;
-    flex-direction: row;
-    gap: 1.0em;
-    height: 3.6em;             /* fixed height for heading and options */
-}
-
-.options-main {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    min-width: 0;
-    border-radius: 30px;
-    background: rgb(var(--card-bg));
-    overflow: hidden;
-}
-
 .options button {
-    font-size: 1em;
     color: rgb(var(--text));
     width: 100%;
     font-size: 1.2em;
@@ -207,29 +203,16 @@
     background: rgb(var(--hover-bg));
 }
 
-.options button.left {
+.segmented button:first-child {
     border-radius: 30px 0px 0px 30px;
 }
 
-.options button.middle {
-    border-radius: 0px;
-}
-
-.options button.right {
+.segmented button:last-child {
     border-radius: 0px 30px 30px 0px;
 }
 
 .options button.submit {
-    padding: 0;
-    border-radius: 50%;     /* circle */
-    border: none;
-    height: 100%;          /* fill parent height */
-    width: auto; 
-    aspect-ratio: 1 / 1;   /* keeps width and height equal */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    width: auto;
 }
 
 .options button.submit:hover {
@@ -244,32 +227,22 @@
 
 
 .options button.selected {
-    background: rgb(var(--text));
+    background: rgb(var(--inv-bg));
     color: rgb(var(--card-bg)) !important;
 }
 
 
 .panel {
-    display: flex;
-    flex-direction: column;
     gap: 1em;
-    width: 100%;
     flex-grow: 1;      /* panel grows to fill remaining height */
     background: rgb(var(--bg));
-    border-radius: 20px;
     overflow: scroll;
     padding: none;
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     flex-grow: 1;      /* panel grows to fill remaining height */
-    background: rgb(var(--card-bg));
-    border-radius: 20px;
-    overflow: hidden;
     min-height: 400px;    /* allows flex children to shrink properly */
 }
 

@@ -14,27 +14,31 @@ function HeadingBar() {
         setIsDarkMode(nextIsDark);
     };
 
+    const navClass = ({ isActive }) => (isActive ? "nav-button selected" : "nav-button");
+
     return (
-        <div className="heading">
-            <div className="heading-main">
+        <div className="heading bar">
+            <div className="heading-main bar-main">
                 <h1>Yataya</h1>
                 <div className="heading-buttons">
-                    <NavLink to="/" className={({ isActive }) => (isActive ? "selected" : undefined)}>
+                    <NavLink to="/" className={navClass}>
                         Home
                     </NavLink>
-                    <NavLink to="/plan" className={({ isActive }) => (isActive ? "selected" : undefined)}>
+                    <NavLink to="/plan" className={navClass}>
                         Plan
                     </NavLink>
-                    <NavLink to="/support" className={({ isActive }) => (isActive ? "selected" : undefined)}>
+                    <NavLink to="/support" className={navClass}>
                         Support
                     </NavLink>
                     <NavLink
                         to="/account"
-                        className={({ isActive }) => (isActive ? "selected heading-end" : "heading-end")}
+                        className={({ isActive }) =>
+                            isActive ? "nav-button selected heading-end" : "nav-button heading-end"
+                        }
                     >
                         Account
                     </NavLink>
-                    <button className="menu heading-end">
+                    <button className="nav-button menu heading-end">
                         <svg className="menu-icon"
                             width={20}
                             height={20}
@@ -48,7 +52,7 @@ function HeadingBar() {
                     </button>
                 </div>
             </div>
-            <button className="dark-mode-toggle" onClick={handleDarkModeToggle}>
+            <button className="icon-button dark-mode-toggle" onClick={handleDarkModeToggle}>
                 {isDarkMode ? (
                     <svg
                         className="sun-icon"

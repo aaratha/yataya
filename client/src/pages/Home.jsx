@@ -13,32 +13,31 @@ function Home() {
     return (
         <div className="app-shell">
             <HeadingBar />
-            <section className="panel">
-
-                <div className="card">
+            <section className="panel surface">
+                <div className="card surface">
                     <h1>Yataya</h1>
                     <p className="muted">{msg}</p>
                 </div>
 
-                <div className="card">
+                <div className="card surface">
                     <p>
                         Edit <code>src/pages/Home.jsx</code> to keep iterating.
                     </p>
                 </div>
 
-                <div className="card">
+                <div className="card surface">
                     <p>
                         Edit <code>src/pages/Home.jsx</code> to keep iterating.
                     </p>
                 </div>
 
-                <div className="card">
+                <div className="card surface">
                     <p>
                         Edit <code>src/pages/Home.jsx</code> to keep iterating.
                     </p>
                 </div>
 
-                <div className="card">
+                <div className="card surface">
                     <p>
                         Edit <code>src/pages/Home.jsx</code> to keep iterating.
                     </p>

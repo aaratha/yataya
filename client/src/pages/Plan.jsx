@@ -12,30 +12,30 @@ function Plan() {
     return (
         <div className="app-shell">
             <HeadingBar />
-            <div className="options">
-                <div className="options-main">
+            <div className="options bar">
+                <div className="options-main bar-main segmented">
                     <button
-                        className={activeTab === "destinations" ? "selected left" : "left"}
+                        className={activeTab === "destinations" ? "selected" : undefined}
                         onClick={() => setActiveTab("destinations")}
                     >
                         Destinations
                     </button>
 
                     <button
-                        className={activeTab === "travelers" ? "selected middle" : "middle"}
+                        className={activeTab === "travelers" ? "selected" : undefined}
                         onClick={() => setActiveTab("travelers")}
                     >
                         Travelers
                     </button>
 
                     <button
-                        className={activeTab === "dates" ? "selected right" : "right"}
+                        className={activeTab === "dates" ? "selected" : undefined}
                         onClick={() => setActiveTab("dates")}
                     >
                         Dates
                     </button>
                 </div>
-                <button className="submit">
+                <button className="icon-button submit">
                     <svg
                         className="arrow-icon"
                         width={30}
@@ -50,7 +50,7 @@ function Plan() {
                     </svg>
                 </button>
             </div>
-            <div className="card">
+            <div className="card surface">
                 {activeTab === "destinations" && <Destinations />}
                 {activeTab === "travelers" && (
                     <Travelers
