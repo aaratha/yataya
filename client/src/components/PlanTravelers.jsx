@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Travelers({ travelers, setTravelers, destinations, setDestinations }) {
+function Travelers({ travelers, setTravelers, topDestinations, setTopDestinations }) {
     const [name, setName] = useState("");
     const [cityQuery, setCityQuery] = useState("");
     const [cityOptions, setCityOptions] = useState([]);
@@ -80,7 +80,7 @@ function Travelers({ travelers, setTravelers, destinations, setDestinations }) {
             ),
         })
             .then((res) => res.json())
-            .then((data) => setDestinations(data))
+            .then((data) => setTopDestinations(data))
             .catch((err) => console.error(err));
     };
 
@@ -145,11 +145,11 @@ function Travelers({ travelers, setTravelers, destinations, setDestinations }) {
                 </>
             )}
 
-            {destinations.length > 0 && (
+            {topDestinations.length > 0 && (
                 <>
                     <h2>Top Destinations</h2>
                     <ul>
-                        {destinations.map((dest) => (
+                        {topDestinations.map((dest) => (
                             <li key={dest.cityIATA}>
                                 <strong>{dest.name}</strong> ({dest.cityIATA}) — Latitude:{" "}
                                 {dest.latitude}, Longitude: {dest.longitude}

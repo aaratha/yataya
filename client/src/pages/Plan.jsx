@@ -7,6 +7,7 @@ import HeadingBar from "../components/HeadingBar.jsx";
 function Plan() {
     const [travelers, setTravelers] = useState([]);
     const [destinations, setDestinations] = useState([]);
+    const [topDestinations, setTopDestinations] = useState([]);
     const [activeTab, setActiveTab] = useState("travelers");
 
     return (
@@ -51,13 +52,17 @@ function Plan() {
                 </button>
             </div>
             <div className="card surface">
-                {activeTab === "destinations" && <Destinations />}
+                {activeTab === "destinations" &&
+                    <Destinations
+                        destinations={destinations}
+                        setDestinations={setDestinations}
+                    />}
                 {activeTab === "travelers" && (
                     <Travelers
                         travelers={travelers}
                         setTravelers={setTravelers}
-                        destinations={destinations}
-                        setDestinations={setDestinations}
+                        topDestinations={topDestinations}
+                        setTopDestinations={setTopDestinations}
                     />
                 )}
                 {activeTab === "dates" && <Dates />}
