@@ -1,11 +1,11 @@
 services:
   db:
     container_name: yataya-db
-    image: postgres
+    image: postgres:16
     restart: always
     shm_size: 128mb
     environment:
-      POSTGRES_PASSWORD: B5aod711d2pmzp
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
@@ -29,10 +29,10 @@ services:
       - db
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=B5aod711d2pmzp
-      - AMADEUS_CLIENT_ID=FL5z5GTmtjkPXFBFGyM85nTXSyRgAZkd
-      - AMADEUS_CLIENT_SECRET=xTbasGMlel9dpscA
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - AMADEUS_CLIENT_ID=${AMADEUS_CLIENT_ID}
+      - AMADEUS_CLIENT_SECRET=${AMADEUS_CLIENT_SECRET}
 
   nginx:
     container_name: yataya-nginx
