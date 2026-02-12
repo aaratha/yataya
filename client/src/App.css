@@ -126,6 +126,15 @@
     display: block;
 }
 
+.heading-buttons-mobile {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4.5em;
+    right: 1em;
+    background: rgb(var(--card-bg));
+}
+
 @media (max-width: 700px) {
     .heading-buttons .nav-button {
         display: none;
@@ -133,6 +142,11 @@
     .heading-buttons button.menu {
         display: flex;
     }
+
+    .open {
+        display: flex;
+    }
+
 }
 
 .heading-buttons .nav-button {

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function HeadingBar() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         setIsDarkMode(document.documentElement.classList.contains("dark"));
@@ -14,7 +15,16 @@ function HeadingBar() {
         setIsDarkMode(nextIsDark);
     };
 
+    const handleMenuToggle = () => {
+        const headingButtonsMobile = document.querySelector(".heading-buttons-mobile");
+        headingButtonsMobile.classList.toggle("open", !isMenuOpen);
+        console.log("Toggled menu to", !isMenuOpen);
+        setIsMenuOpen((prev) => !prev);
+    };
+
     const navClass = ({ isActive }) => (isActive ? "nav-button selected" : "nav-button");
+    
+    const navClassMobile = ({ isActive }) => (isActive ? "nav-button-mobile selected" : "nav-button-mobile");
 
     return (
         <div className="heading bar">
@@ -38,7 +48,7 @@ function HeadingBar() {
                     >
                         Account
                     </NavLink>
-                    <button className="nav-button menu heading-end">
+                    <button className="nav-button menu heading-end" onClick={handleMenuToggle}>
                         <svg className="menu-icon"
                             width={20}
                             height={20}
@@ -81,6 +91,20 @@ function HeadingBar() {
                     </svg>
                 )}
             </button>
+            <div className="heading-buttons-mobile">
+                <NavLink to="/" className={navClassMobile}>
+                    Home
+                </NavLink>
+                <NavLink to="/plan" className={navClassMobile}>
+                    Plan
+                </NavLink>
+                <NavLink to="/support" className={navClassMobile}>
+                    Support
+                </NavLink>
+                <NavLink to="/account" className={navClassMobile}>
+                    Account
+                </NavLink>
+            </div>
         </div>
     );
 }
