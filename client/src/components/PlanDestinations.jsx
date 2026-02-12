@@ -109,7 +109,7 @@ function Destinations({ destinations, setDestinations }) {
   };
 
   return (
-    <div className="destinations-shell">
+    <div>
       <h2>Add Destinations</h2>
       <form onSubmit={addDestination}>
         <input

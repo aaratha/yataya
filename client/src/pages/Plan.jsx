@@ -2,7 +2,6 @@ import { useState } from "react";
 import Travelers from "../components/PlanTravelers.jsx";
 import Destinations from "../components/PlanDestinations.jsx";
 import Dates from "../components/PlanDates.jsx";
-import HeadingBar from "../components/HeadingBar.jsx";
 
 function Plan() {
     const [travelers, setTravelers] = useState([]);
@@ -11,8 +10,7 @@ function Plan() {
     const [activeTab, setActiveTab] = useState("travelers");
 
     return (
-        <div className="app-shell">
-            <HeadingBar />
+        <>
             <div className="options bar">
                 <div className="options-main bar-main segmented">
                     <button
@@ -67,7 +65,7 @@ function Plan() {
                 )}
                 {activeTab === "dates" && <Dates />}
             </div>
-        </div>
+        </>
     );
 }
 
